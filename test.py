@@ -27,13 +27,14 @@ def koch(resolution, quality):
     if quality > 0:
         for i in [0, -60, 120, -60]:
             if i == 0:
-                pointcalc(currentx, currenty, (resolution/4**quality)/2, angle)
+                pointcalc(currentx, currenty, 
+                          (resolution/4**quality)/2, angle)
             else:
                 angle = angle + i
-                pointcalc(currentx, currenty, resolution/4**quality, angle)
+                pointcalc(currentx, currenty, 
+                          resolution/4**quality, angle)
             koch(resolution/3, quality-1)
-
-
+            
 print("Calculating...")
 koch(resolution, quality)
 points.append(resolution)
